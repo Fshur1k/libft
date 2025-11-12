@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 13:29:12 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/12 13:29:29 by ofedota          ###   ########.fr       */
+/*   Created: 2025/11/12 13:28:54 by ofedota           #+#    #+#             */
+/*   Updated: 2025/11/12 13:31:12 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int n);
+int ft_isprint(int n);
 
-int ft_isascii(int n)
+int ft_isprint(int n)
 {
-    return (n >= 0 && n <= 127);
+    return (n >= 32 && n <= 127);
 }

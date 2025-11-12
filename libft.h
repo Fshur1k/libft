@@ -5,6 +5,7 @@ int	ft_isalpha(int n);
 int	ft_isdigit(int n);
 int ft_isalnum(int n);
 int ft_isascii(int n);
+int ft_isprint(int n);
 
 
 #endif // LIBFT_H
