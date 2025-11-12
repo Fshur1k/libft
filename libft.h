@@ -6,6 +6,7 @@ int	ft_isdigit(int n);
 int ft_isalnum(int n);
 int ft_isascii(int n);
 int ft_isprint(int n);
+size_t ft_strlen(const char *str);
 
 
 #endif // LIBFT_H
