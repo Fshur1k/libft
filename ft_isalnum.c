@@ -3,11 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
+/*   By: sasha <sasha@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 07:27:25 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/10 07:30:48 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/12 13:18:17 by sasha            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int ft_isalnum(int n);
+
+int ft_isalnum(int n)
+{
+    return ((n >= 48 && n <= 57)
+     || (n >= 65 && n <= 90) || (n >= 97 && n <= 122));
+}
