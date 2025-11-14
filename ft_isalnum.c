@@ -6,14 +6,14 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 13:29:20 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/12 13:29:23 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/14 15:09:56 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum(int n);
+#include "libft.h"
 
-int ft_isalnum(int n)
+int	ft_isalnum(int n)
 {
-    return ((n >= 48 && n <= 57)
-     || (n >= 65 && n <= 90) || (n >= 97 && n <= 122));
+	return ((n >= 48 && n <= 57)
+		|| (n >= 65 && n <= 90) || (n >= 97 && n <= 122));
 }

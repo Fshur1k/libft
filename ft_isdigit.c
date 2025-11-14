@@ -6,11 +6,11 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 13:29:04 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/12 13:29:34 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/14 14:57:05 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int n);
+#include "libft.h"
 
 int	ft_isdigit(int n)
 {

@@ -6,13 +6,13 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 13:28:54 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/12 13:31:12 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/14 15:11:54 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int n);
+#include "libft.h"
 
-int ft_isprint(int n)
+int	ft_isprint(int n)
 {
-    return (n >= 32 && n <= 127);
+	return (n >= 32 && n <= 127);
 }
