@@ -6,37 +6,34 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:58:21 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/15 10:52:45 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/16 20:17:17 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-size_t strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
+	size_t	dst_len;
+	size_t	src_len;
 	size_t	i;
-	size_t	len_src;
 
+	dst_len = 0;
+	src_len = ft_strlen(src);
 	i = 0;
-	while (src[i] && size > 0)
+	if (size == 0)
+		return (src_len);
+	while (dst[dst_len] && dst_len < size)
 	{
+		dst_len++;
+	}
+	if (dst_len == size)
+		return (size + src_len);
+	
+	while (size > dst_len + i + 1 && src[i])
+	{
+		dst[dst_len + i] = src[i];
 		i++;
 	}
-	len_src = i;
-	i = 0;
-	while (i < len_src && dst[len_src + i - 1])
-	{
-		dst[len_src + i] = src[i];
-		i++;
-	}
-	dst[len_src + i] = '\0';
-	return (len_src + i);
-}
-
-int main(void)
-{
-	char str[] = "String";
-	char str2[] = "NewString";
-	int length = strlcat(str2, str, 4);
-	printf("%s, %d",str2, length);
+	dst[dst_len + i] = '\0';
+	return (src_len + dst_len);
 }
