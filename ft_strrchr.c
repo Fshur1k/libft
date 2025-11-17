@@ -6,7 +6,7 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 22:01:22 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/16 22:02:09 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/17 15:32:08 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t  i;
-    char    *match;
+	size_t	i;
+	char	*match;
 
-    i = 0;
-    match = NULL;
-    while (s[i])
-    {
-        if (s[i] == (char) c)
-            match = (char *)s + i;
-        i++;
-    }
-    if ((char) c == '\0')
-        return ((char *)s + i);
-    return (match);
+	i = 0;
+	match = NULL;
+	while (s[i])
+	{
+		if (s[i] == (char) c)
+			match = (char *)s + i;
+		i++;
+	}
+	if ((char) c == '\0')
+		return ((char *)s + i);
+	return (match);
 }
 
 /* int main(void)
