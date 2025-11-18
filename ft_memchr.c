@@ -6,12 +6,19 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 15:50:43 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/17 16:19:56 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/18 10:59:44 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Search memory for a byte value.
+ * @param s Memory block.
+ * @param c Byte to search for.
+ * @param n Number of bytes.
+ * @return Pointer to first occurrence or NULL.
+ */
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t				i;

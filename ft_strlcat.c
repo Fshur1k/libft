@@ -6,12 +6,19 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:58:21 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/17 15:28:40 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/18 11:00:58 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Concatenate string with size limit (BSD function).
+ * @param dst Destination buffer.
+ * @param src Source string.
+ * @param size Size of destination buffer.
+ * @return Length of attempted concatenation.
+ */
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	dst_len;

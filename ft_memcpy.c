@@ -6,12 +6,19 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 17:30:17 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/14 15:15:07 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/18 10:57:53 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Copy memory block.
+ * @param dst Destination pointer.
+ * @param src Source pointer.
+ * @param n Number of bytes.
+ * @return Destination pointer.
+ */
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char	*p_dest;

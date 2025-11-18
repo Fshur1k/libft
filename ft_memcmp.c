@@ -6,12 +6,19 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 16:34:29 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/17 17:16:05 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/18 10:59:59 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Compare two memory blocks.
+ * @param s1 First block.
+ * @param s2 Second block.
+ * @param n Number of bytes.
+ * @return Difference between first differing bytes.
+ */
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t				i;

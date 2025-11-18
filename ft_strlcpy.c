@@ -6,12 +6,19 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:25:49 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/14 16:50:16 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/18 11:05:34 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Copy string with size limit (BSD function).
+ * @param dest Destination buffer.
+ * @param src Source string.
+ * @param size Size of destination buffer.
+ * @return Length of attempted copy.
+ */
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;

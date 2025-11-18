@@ -6,12 +6,18 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 22:01:22 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/17 15:32:08 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/18 11:01:26 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Locate last occurrence of character.
+ * @param s String to search.
+ * @param c Character to find.
+ * @return Pointer to character or NULL.
+ */
 char	*ft_strrchr(const char *s, int c)
 {
 	size_t	i;
