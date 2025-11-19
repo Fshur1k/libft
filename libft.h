@@ -6,7 +6,7 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:46:52 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/19 16:48:26 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/19 21:00:40 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,7 @@ void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s, char const *set);
+char	**ft_split(char const *s, char c);
 
 #endif // LIBFT_H
