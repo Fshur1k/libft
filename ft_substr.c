@@ -6,7 +6,7 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 12:24:35 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/19 14:43:20 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/19 17:22:19 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
  * @param len Maximum length of substring.
  * @return Newly allocated substring or NULL.
  */
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char 	*ptr;
+	char	*ptr;
 	size_t	s_len;
 	size_t	sub_len;
-	
+
 	if (s == NULL)
 		return (NULL);
 	s_len = ft_strlen(s);
@@ -36,7 +36,6 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 		*ptr = '\0';
 		return (ptr);
 	}
-
 	sub_len = s_len - start;
 	if (len < sub_len)
 		sub_len = len;
@@ -47,4 +46,3 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	ptr[sub_len] = '\0';
 	return (ptr);
 }
-

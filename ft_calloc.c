@@ -6,7 +6,7 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 10:42:32 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/19 11:41:08 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/19 17:24:40 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,15 @@
  * @param size Size of one element.
  * @return Pointer to allocated memory or NULL.
  */
-void *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	unsigned char	*ptr = NULL;
+	unsigned char	*ptr;
 	size_t			i;
 
 	i = 0;
 	if (size != 0 && ((nmemb * size) / size != nmemb))
-    	return (NULL);
+		return (NULL);
 	ptr = malloc(size * nmemb);
-	
 	if (ptr == NULL)
 		return (NULL);
 	while (i < nmemb * size)

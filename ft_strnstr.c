@@ -6,7 +6,7 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 17:22:36 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/18 10:52:14 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/19 17:24:55 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	i = 0;
 	little_len = ft_strlen(little);
 	if (little_len == 0)
-    	return ((char *)big);
-	if (len == 0 || little_len > len) 
-    	return (NULL);
-	while((i <= (len - little_len)) && (big[i] != '\0'))
+		return ((char *)big);
+	if (len == 0 || little_len > len)
+		return (NULL);
+	while ((i <= (len - little_len)) && (big[i] != '\0'))
 	{
-		if (ft_strncmp(big+i, little, little_len) == 0)
+		if (ft_strncmp(big + i, little, little_len) == 0)
 			return ((char *)big + i);
 		i++;
 	}
-	return NULL;
+	return (NULL);
 }
 
 /* void test(const char *haystack, const char *needle, size_t len)
