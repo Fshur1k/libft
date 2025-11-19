@@ -6,7 +6,7 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 11:14:54 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/19 09:17:53 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/19 10:23:35 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,31 +27,23 @@ int	ft_atoi(const char *str)
 	i = 0;
 	sign = 1;
 
-	while (str[i] != '\0' && !ft_isalpha(str[i]))
+	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
-			i++;
-		if (str[i] == '-' || str[i] == '+' || ft_isdigit(str[i]))
-		{
-			if (str[i] == '-')
-				sign = -1;	
-			if (str[i] == '+')
-				sign = 1;
-			if (ft_isdigit(str[i]))
-				res = res * 10 + (str[i] - '0');
-		}
-		if (str[i] == '-' && !ft_isdigit(str[i+1]))
-			break;
-		if (str[i] == '+' && !ft_isdigit(str[i+1]))
-			break;
-		if (ft_isdigit(str[i]) && ((str[i+1] >= 9 && str[i+1] <= 13) || (str[i+1] == 32)))
-			break;
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (ft_isdigit(str[i]))
+	{
+		res = res * 10 + (str[i] - '0');
 		i++;
 	}
 	return (res * sign);
 }
 
-void    test(const char *input)
+/* void    test(const char *input)
 {
     int std = atoi(input);
     int ft = ft_atoi(input);
@@ -117,4 +109,4 @@ int main(void)
 	test(" \t\n\v\f\r  -12");
 
     return (0);
-}
+}*/
