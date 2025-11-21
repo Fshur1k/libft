@@ -6,7 +6,7 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 21:33:19 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/21 14:58:58 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/21 18:03:24 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 size_t	count_words(const char *s, char c);
 void	write_words(char **arr, const char *s, size_t words, char c);
 void	free_array(size_t pos, char **arr);
+
 /**
  * @brief Split string by delimiter.
  * @param s String to split.
@@ -92,7 +93,6 @@ void	write_words(char **arr, const char *s, size_t words, char c)
 	}
 	arr[j] = NULL;
 }
-
 
 /* void print_split(char **arr)
 {
