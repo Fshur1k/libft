@@ -6,7 +6,7 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 21:33:19 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/21 12:52:14 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/21 14:58:58 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 size_t	count_words(const char *s, char c);
 void	write_words(char **arr, const char *s, size_t words, char c);
+void	free_array(size_t pos, char **arr);
 /**
  * @brief Split string by delimiter.
  * @param s String to split.
@@ -23,14 +24,14 @@ void	write_words(char **arr, const char *s, size_t words, char c);
 char	**ft_split(char const *s, char c)
 {
 	size_t	words;
+	char	**arr;
 
 	if (s == NULL)
-		return NULL;
+		return (NULL);
 	words = count_words(s, c);
-	char **arr = malloc((words + 1) * sizeof(char *));// + 1 cause end of arr is '\0'
+	arr = malloc((words + 1) * sizeof(char *));
 	if (arr == NULL)
-		return NULL;
-	
+		return (NULL);
 	write_words(arr, s, words, c);
 	return (arr);
 }
@@ -45,22 +46,34 @@ size_t	count_words(const char *s, char c)
 	while (*s)
 	{
 		if (*s != c && in_word == 0)
-			{
-				in_word = 1;
-				count++;
-			}
+		{
+			in_word = 1;
+			count++;
+		}
 		else if (*s == c)
 			in_word = 0;
 		s++;
 	}
 	return (count);
 }
+
+void	free_array(size_t pos, char **arr)
+{
+	if (arr[pos] == NULL)
+	{
+		while (pos > 0)
+			free (arr[--pos]);
+		free (arr);
+		return ;
+	}
+}
+
 void	write_words(char **arr, const char *s, size_t words, char c)
 {
 	size_t	i;
 	size_t	j;
 	size_t	start;
-	
+
 	i = 0;
 	j = 0;
 	while (j < words)
@@ -71,23 +84,17 @@ void	write_words(char **arr, const char *s, size_t words, char c)
 		while (s[i] != c && s[i] != '\0')
 			i++;
 		arr[j] = ft_substr(s, start, i - start);
-		if (arr[j] == NULL)
-		{
-			while(j > 0)
-				free(arr[--j]);
-			free(arr);
-			return;
-		}
+		free_array(j, arr);
 		j++;
 		if (s[i] == '\0')
-			break;
+			break ;
 		i++;
 	}
 	arr[j] = NULL;
 }
 
-/* 
-void print_split(char **arr)
+
+/* void print_split(char **arr)
 {
     int i = 0;
 
