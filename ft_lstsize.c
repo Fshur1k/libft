@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 09:58:15 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/24 15:56:49 by ofedota          ###   ########.fr       */
+/*   Created: 2025/11/24 17:43:07 by ofedota           #+#    #+#             */
+/*   Updated: 2025/11/24 18:16:12 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Creates a new list node
- * @param content  Pointer to node content.
- * @return New node, or NULL on failure.
+ * @brief Count the number of nodes.
+ * @param lst First element.
+ * @return Length 
  */
-t_list	*ft_lstnew(void *content)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*new_node = NULL;
-	
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (new_node == NULL)
-		return (NULL);
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
+	size_t	i;
+	t_list	*current;
+
+	i = 0;
+	if (!lst)
+		return (i);
+	current = lst;
+	while (current != NULL)
+	{
+		current = current->next;
+		i++;
+	}
+	return (i);
 }
