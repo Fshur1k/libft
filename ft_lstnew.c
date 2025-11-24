@@ -6,15 +6,14 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 09:58:15 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/24 14:58:24 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/24 15:56:49 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * Creates a new list node.
- *
+ * @brief Creates a new list node
  * @param content  Pointer to node content.
  * @return New node, or NULL on failure.
  */
