@@ -6,13 +6,13 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 20:22:23 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/19 20:59:41 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/25 16:08:38 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	find_char(const char *s, int n)
+static int	find_char(const char *s, int n)
 {
 	size_t	i;
 
@@ -26,6 +26,12 @@ int	find_char(const char *s, int n)
 	return (0);
 }
 
+/**
+  * @brief Remove characters from string that are in set.
+  * @param s Trimmed string.
+  * @param set Characters to be removed.
+  * @return Trimmed string or NULL.
+  **/
 char	*ft_strtrim(char const *s, char const *set)
 {
 	size_t	start;

@@ -6,15 +6,15 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 21:33:19 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/25 15:43:51 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/25 16:02:04 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	count_words(const char *s, char c);
-char	**write_words(char **arr, const char *s, size_t words, char c);
-void	*free_array(size_t pos, char **arr);
+static size_t	count_words(const char *s, char c);
+static char		**write_words(char **arr, const char *s, size_t words, char c);
+static void		*free_array(size_t pos, char **arr);
 
 /**
  * @brief Split string by delimiter.
@@ -36,7 +36,7 @@ char	**ft_split(char const *s, char c)
 	return (write_words(arr, s, words, c));
 }
 
-size_t	count_words(const char *s, char c)
+static size_t	count_words(const char *s, char c)
 {
 	size_t	in_word;
 	size_t	count;
@@ -57,7 +57,7 @@ size_t	count_words(const char *s, char c)
 	return (count);
 }
 
-void	*free_array(size_t pos, char **arr)
+static void	*free_array(size_t pos, char **arr)
 {
 	size_t	i;
 
@@ -71,7 +71,7 @@ void	*free_array(size_t pos, char **arr)
 	return (NULL);
 }
 
-char	**write_words(char **arr, const char *s, size_t words, char c)
+static char	**write_words(char **arr, const char *s, size_t words, char c)
 {
 	size_t	i;
 	size_t	j;

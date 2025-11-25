@@ -6,13 +6,13 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 12:54:40 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/21 17:45:33 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/25 15:59:54 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	string_len(int n);
+static size_t	string_len(int n);
 
 /**
  * @brief Convert integer to string.
@@ -45,7 +45,7 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-size_t	string_len(int n)
+static size_t	string_len(int n)
 {
 	size_t	l;
 	long	num;
