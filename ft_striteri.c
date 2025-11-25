@@ -6,7 +6,7 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 18:16:50 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/21 19:33:06 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/25 15:45:43 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	size_t	i;
 
 	i = 0;
-	if (s == NULL)
+	if (s == NULL || f == NULL)
 		return ;
 	while (s[i] != '\0')
 	{

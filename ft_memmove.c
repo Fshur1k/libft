@@ -6,7 +6,7 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 12:54:47 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/18 11:04:57 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/25 15:12:07 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	p_dst = (unsigned char *) dest;
 	p_src = (unsigned char *) src;
-	if (dest <= src)
+	if (dest == src || n == 0)
+		return (dest);
+	if (dest < src)
 	{
 		while (n--)
 		{

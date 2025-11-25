@@ -25,7 +25,7 @@ $(NAME): $(OBJS)
 all: $(NAME)
 
 bonus: $(BONUS_OBJS)
-	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+	ar rcs $(NAME) $(BONUS_OBJS)
 
 clean:
 	rm -f $(OBJS) $(BONUS_OBJS)

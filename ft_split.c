@@ -6,15 +6,15 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 21:33:19 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/21 18:03:24 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/25 15:43:51 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 size_t	count_words(const char *s, char c);
-void	write_words(char **arr, const char *s, size_t words, char c);
-void	free_array(size_t pos, char **arr);
+char	**write_words(char **arr, const char *s, size_t words, char c);
+void	*free_array(size_t pos, char **arr);
 
 /**
  * @brief Split string by delimiter.
@@ -33,8 +33,7 @@ char	**ft_split(char const *s, char c)
 	arr = malloc((words + 1) * sizeof(char *));
 	if (arr == NULL)
 		return (NULL);
-	write_words(arr, s, words, c);
-	return (arr);
+	return (write_words(arr, s, words, c));
 }
 
 size_t	count_words(const char *s, char c)
@@ -58,18 +57,21 @@ size_t	count_words(const char *s, char c)
 	return (count);
 }
 
-void	free_array(size_t pos, char **arr)
+void	*free_array(size_t pos, char **arr)
 {
-	if (arr[pos] == NULL)
+	size_t	i;
+
+	i = 0;
+	while (pos > i)
 	{
-		while (pos > 0)
-			free (arr[--pos]);
-		free (arr);
-		return ;
+		free (arr[i]);
+		i++;
 	}
+	free (arr);
+	return (NULL);
 }
 
-void	write_words(char **arr, const char *s, size_t words, char c)
+char	**write_words(char **arr, const char *s, size_t words, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -85,13 +87,15 @@ void	write_words(char **arr, const char *s, size_t words, char c)
 		while (s[i] != c && s[i] != '\0')
 			i++;
 		arr[j] = ft_substr(s, start, i - start);
-		free_array(j, arr);
+		if (!arr[j])
+			return (free_array(j, arr));
 		j++;
 		if (s[i] == '\0')
 			break ;
 		i++;
 	}
 	arr[j] = NULL;
+	return (arr);
 }
 
 /* void print_split(char **arr)

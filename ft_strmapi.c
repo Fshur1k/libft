@@ -6,7 +6,7 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 18:10:57 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/21 18:56:47 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/25 15:45:06 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*arr;
 
 	i = 0;
-	if (s == NULL)
+	if (s == NULL || f == NULL)
 		return (NULL);
 	s_len = ft_strlen(s);
 	arr = malloc(s_len + 1);
