@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 19:37:01 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/25 07:04:06 by ofedota          ###   ########.fr       */
+/*   Created: 2025/11/25 07:37:05 by ofedota           #+#    #+#             */
+/*   Updated: 2025/11/25 11:08:16 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 /**
- * @brief Delete entire list by entry point. And sen pointer NULL.
- * @param lst Pointer to a node.
- * @param del Function used to delete content.
- */
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+  * @brief Apply function to all list memembers.
+  * @param lst Entry point.
+  * @param f Address Function.
+  */
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*temp_node;
+	t_list	*node;
 
-	temp_node = NULL;
-	if (!lst || !del)
+	if (!lst || !f)
 		return ;
-	while (*lst != NULL)
+	node = NULL;
+	while (lst != NULL)
 	{
-		temp_node = (*lst)->next;
-		del((*lst)->content);
-		free(*lst);
-		*lst = temp_node;
+		f(lst->content);
+		node = lst->next;
+		lst = node;
 	}
-	*lst = NULL;
 }

@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 19:37:01 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/25 07:04:06 by ofedota          ###   ########.fr       */
+/*   Created: 2025/11/25 11:32:57 by ofedota           #+#    #+#             */
+/*   Updated: 2025/11/25 11:37:36 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Delete entire list by entry point. And sen pointer NULL.
- * @param lst Pointer to a node.
- * @param del Function used to delete content.
- */
-void	ft_lstclear(t_list **lst, void (*del)(void*))
-{
-	t_list	*temp_node;
-
-	temp_node = NULL;
-	if (!lst || !del)
-		return ;
-	while (*lst != NULL)
-	{
-		temp_node = (*lst)->next;
-		del((*lst)->content);
-		free(*lst);
-		*lst = temp_node;
-	}
-	*lst = NULL;
-}
+  * @brief Creates a new list by applying 'f' to each node.
+  * @param lst First node of original list.
+  * @param f Function to transform content.
+  * @param del Cleanup function on failure.
+  * @return New transformed list, or NULL. 
+  */
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *));
