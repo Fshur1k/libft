@@ -6,7 +6,7 @@
 /*   By: ofedota <ofedota@student.42prague.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 12:54:40 by ofedota           #+#    #+#             */
-/*   Updated: 2025/11/25 15:59:54 by ofedota          ###   ########.fr       */
+/*   Updated: 2025/11/25 17:51:57 by ofedota          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ char	*ft_itoa(int n)
 		return (NULL);
 	num = n;
 	if (num < 0)
+	{
 		num = -num;
+		str[0] = '-';
+	}
 	str[l] = '\0';
 	if (num == 0)
 		str[0] = '0';
@@ -40,8 +43,6 @@ char	*ft_itoa(int n)
 		str[--l] = (num % 10) + '0';
 		num /= 10;
 	}
-	if (n < 0)
-		str[0] = '-';
 	return (str);
 }
 
